@@ -1,0 +1,50 @@
+#navbar-div{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    background-color: #090163;
+}
+
+#div-fondo{
+    background-image: linear-gradient(to bottom, #0b017e, #190283, #240287, #2d038c, #350490);
+    height: 100%;
+}
+
+#div-juegos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    gap: 80px;
+}
+
+.btn-juego{
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    background-color: #d100b6;
+    border: none;
+    font-size: 40px;
+    font-family: 'consolas';
+    color: aqua;
+    transition: transform 0.3s ease;
+}
+
+.btn-juego:hover{
+    animation: floatUpDown 1.5s ease-in-out infinite;
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}
+
+@keyframes floatUpDown {
+    0% {
+    transform: translateY(0);
+    }
+    50% {
+    transform: translateY(-8px);
+    }
+    100% {
+    transform: translateY(0);
+    }
+}

@@ -1,0 +1,80 @@
+#div-fondo{
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#card-login{
+    background-color: rgba(255, 255, 255, 0.099);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border:2px solid rgba(240, 255, 255, 0.166);
+    border-radius: 30px;
+}
+
+#div-input{
+    display:flex;
+    flex-direction: column;
+}
+
+.input-login{
+    background-color: #1100c945;
+    width: 380px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border:none;
+    font-size: large;
+    text-align: justify;
+    padding: 0 15px; 
+    outline: none; 
+}
+
+.input-login:focus {
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}
+
+#div-botones{
+    display:flex;
+    justify-content: center;
+    gap:15px;
+    margin-top: 20px;
+}
+
+#btn-autocompletar{
+    display:flex;
+    justify-content: center;
+    gap:15px;
+    margin-top: 10px;
+}
+
+.btn-login{
+    width:150px;
+    height: 40px;
+    border-radius: 20px;
+    border:2px solid rgba(240, 255, 255, 0.166);
+    background-color: #1500ff;
+    font-size: medium;
+}
+
+.btn-login:hover{
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}
+
+.letraLinda{
+    color:aqua;
+    font-family: 'consolas';
+}
+
+::placeholder{
+    color:rgba(0, 255, 255, 0.678);
+}

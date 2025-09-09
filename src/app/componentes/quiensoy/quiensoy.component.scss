@@ -1,0 +1,40 @@
+#div-fondo {
+    background-image: linear-gradient(to bottom, #000ad3, #1c07c2, #2605b2, #2b04a2,
+    #2e0492, #3c028e, #470289, #4f0285, #63008a, #77008e, #890092, #9b0095);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card-about {
+    background-color: #0e0038;
+    display: flex;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // TEXTO
+    text-align: center;
+    color: aqua;
+    font-size: larger;
+}
+
+
+#img-autor {
+    max-height: 350px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    object-fit:cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#img-autor:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px 20px rgb(0, 247, 247); 
+}

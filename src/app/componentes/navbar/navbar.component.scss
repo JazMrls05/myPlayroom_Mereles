@@ -1,0 +1,24 @@
+#navbar{
+    width:97vw;
+    margin-top: 15px;
+    display: flex;
+    background-color: #7700c9;
+    border: 2px solid #e1b4fe; 
+    box-shadow: 0 0 10px #e1b4fe; 
+}
+
+.btn-navbar{
+    height: 40px;
+    width:135px;
+    font-size: large;
+    border-radius: 15px;
+    border: none;
+    background-color: #1500ff;
+    color:aqua;
+    font-family:'consolas';
+}
+
+.btn-navbar:hover{
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}
