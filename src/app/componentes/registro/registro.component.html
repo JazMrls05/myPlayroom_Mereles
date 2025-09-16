@@ -1,0 +1,30 @@
+<div id="div-fondo">
+    <mat-card id="card-registro">
+    <mat-card-content>
+        <form>
+        <h2 class="letraLinda" style="text-align: center;">
+            ¡Creá tu cuenta y desbloqueá la diversión!
+        </h2>
+
+        <div id="div-input">
+            <div class="input-container">
+            ★ <input class="input-registro letraLinda" placeholder="Ingrese un alias" [(ngModel)]="alias" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="input-container">
+            ★ <input class="input-registro letraLinda" placeholder="Ingrese su correo electrónico" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="input-container">
+            ★ <input class="input-registro letraLinda" placeholder="Ingrese una clave" type="password" [(ngModel)]="clave" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+
+        <div id="div-botones">
+            <button class="btn-registro letraLinda" type="button" (click)="validarRegistro()">Registrarse</button>
+            <button class="btn-registro letraLinda" type="button" routerLink="/home">Volver</button>
+        </div>
+        </form>
+    </mat-card-content>
+    </mat-card>
+</div>

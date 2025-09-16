@@ -1,6 +1,12 @@
+.letraLinda{
+    color:aqua;
+    font-family: 'consolas';
+}
+
 #div-fondo{
-    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
-    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+background-image: linear-gradient(to bottom, 
+    #1100c9, #1f00ca, #2800cc, #3000cd, #3700ce, #5200cc, #6600cb, 
+    #7700c9, #9300c4, #ab00c0, #bf00bb, #d100b6);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +14,7 @@
     height: 100vh;
 }
 
-#card-login{
+#card-registro{
     background-color: rgba(255, 255, 255, 0.099);
     display:flex;
     flex-direction: column;
@@ -23,14 +29,16 @@
 #div-input{
     display:flex;
     flex-direction: column;
+    color:aqua;
+    font-family: 'consolas';
+    font-size: large;
 }
 
-.input-login{
+.input-registro{
     background-color: #1100c945;
     width: 380px;
     height: 40px;
     border-radius: 20px;
-    margin-top: 20px;
     border:none;
     font-size: large;
     text-align: justify;
@@ -38,7 +46,7 @@
     outline: none; 
 }
 
-.input-login:focus {
+.input-registro:focus {
     border: 2px solid aqua; 
     box-shadow: 0 0 10px aqua; 
 }
@@ -50,15 +58,7 @@
     margin-top: 20px;
 }
 
-#btn-autocompletar{
-    display:flex;
-    justify-content: center;
-    gap:15px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
-.btn-login{
+.btn-registro{
     width:150px;
     height: 40px;
     border-radius: 20px;
@@ -67,16 +67,15 @@
     font-size: medium;
 }
 
-.btn-login:hover{
+.btn-registro:hover{
     border: 2px solid aqua; 
     box-shadow: 0 0 10px aqua; 
 }
 
-.letraLinda{
-    color:aqua;
-    font-family: 'consolas';
-}
-
 ::placeholder{
     color:rgba(0, 255, 255, 0.678);
+}
+
+.input-container {
+    margin-bottom: 15px;
 }

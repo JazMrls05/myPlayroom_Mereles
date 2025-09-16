@@ -1,4 +1,5 @@
 #navbar{
+    height:7vh;
     width:97vw;
     margin-top: 15px;
     display: flex;
@@ -7,18 +8,35 @@
     box-shadow: 0 0 10px #e1b4fe; 
 }
 
+#navbar mat-card-content {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    padding: 0 20px;     
+}
+
 .btn-navbar{
     height: 40px;
-    width:135px;
+    width:160px;
     font-size: large;
     border-radius: 15px;
     border: none;
     background-color: #1500ff;
     color:aqua;
     font-family:'consolas';
+    margin-right: 10px;
 }
 
 .btn-navbar:hover{
     border: 2px solid aqua; 
     box-shadow: 0 0 10px aqua; 
+}
+
+.nombre-usuario{
+    color: aqua;
+    font-family: 'consolas';
+    margin-right: 5px;
+    font-size: larger;
+    font-weight: bold;
 }

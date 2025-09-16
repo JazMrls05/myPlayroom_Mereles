@@ -38,3 +38,19 @@
     transform: scale(1.03);
     box-shadow: 0 0 20px 20px rgb(0, 247, 247); 
 }
+
+.btn-about{
+    width:150px;
+    height: 40px;
+    border-radius: 20px;
+    border:2px solid rgba(240, 255, 255, 0.166);
+    background-color: #1500ff;
+    font-size: medium;
+    color: aqua;
+    font-family: 'consolas';
+}
+
+.btn-about:hover{
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}

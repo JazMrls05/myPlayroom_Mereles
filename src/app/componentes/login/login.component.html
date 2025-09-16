@@ -3,17 +3,18 @@
         <mat-card-content>
             <h1 style="text-align: center; " class="letraLinda">🎮¡Hola de nuevo!🎲</h1>
             <div id="div-input">
-                <input type="email" class="input-login letraLinda" placeholder=" Ingresa tu correo electrónico">
-                <input type="password" class="input-login letraLinda" placeholder=" Ingresa tu clave">
+                <input type="email" class="input-login letraLinda" placeholder=" Ingresa tu correo electrónico" [(ngModel)]="email">
+                <input type="password" class="input-login letraLinda" placeholder=" Ingresa tu clave" [(ngModel)]="clave">
             </div>
             <div id="div-botones">
-                <button class="btn-login letraLinda">¡Juguemos!</button>
-                <button class="btn-login letraLinda" >Volver a casa</button>
+                <button class="btn-login letraLinda" (click)="acceder()">¡Juguemos!</button>
+                <button class="btn-login letraLinda" routerLink="/home">Volver a casa</button>
             </div>
             <div id="btn-autocompletar">
-                <button class="btn-login letraLinda">Jugador 1</button>
-                <button class="btn-login letraLinda" >Jugador x</button>
+                <button class="btn-login letraLinda" (click)="autocompletarAdmin()">Administrador</button>
+                <button class="btn-login letraLinda" (click)="autocompletarJugador1()">Jugador 1</button>
             </div>
+            <a routerLink="/registro" class="letraLinda">¿Sos nuevo por acá? ¡Registrate!</a>
         </mat-card-content>
     </mat-card>
 </div>

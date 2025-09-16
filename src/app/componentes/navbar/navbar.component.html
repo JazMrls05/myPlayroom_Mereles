@@ -1,5 +1,20 @@
 <mat-card id="navbar">
     <mat-card-content>
-        <button class="btn-navbar" routerLink="/quiensoy">¿Quién soy? </button>
+        <div id="lado-izq">
+            <button class="btn-navbar" routerLink="/quiensoy">¿Quién soy? ♡</button>
+        </div>
+        <div id="lado-der">
+            <ng-container *ngIf="user$ | async as user; else noUser">
+                <span class="nombre-usuario">
+                    Hola, {{ user.user_metadata.username }}!
+                </span>
+                <button class="btn-navbar" (click)="salir()">Cerrar Sesión</button>
+            </ng-container>
+
+            <ng-template #noUser>
+                <button class="btn-navbar" routerLink="/login">Iniciar Sesión</button>
+                <button class="btn-navbar" routerLink="/registro">Registrarse</button>
+            </ng-template>
+        </div>
     </mat-card-content>
 </mat-card>
