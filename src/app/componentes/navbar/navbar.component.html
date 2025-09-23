@@ -2,6 +2,9 @@
     <mat-card-content>
         <div id="lado-izq">
             <button class="btn-navbar" routerLink="/quiensoy">¿Quién soy? ♡</button>
+            <ng-container *ngIf="user$ | async as user">
+                <button class="btn-navbar" routerLink="/chat">Sala de Chat</button>
+            </ng-container>
         </div>
         <div id="lado-der">
             <ng-container *ngIf="user$ | async as user; else noUser">

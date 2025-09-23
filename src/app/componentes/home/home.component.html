@@ -3,9 +3,9 @@
     <app-navbar></app-navbar>
     </div>
     <div id="div-juegos">
-        <button class="btn-juego">Ahorcado</button>
-        <button class="btn-juego">¿Mayor o menor?</button>
-        <button class="btn-juego">Preguntados</button>
+        <button class="btn-juego" id="ahorcado" (click)="jugar('Ahorcado')">Ahorcado</button>
+        <button class="btn-juego" id="cartas" (click)="jugar('Mayor o menor')">¿Mayor o menor?</button>
+        <button class="btn-juego" >Preguntados</button>
         <button class="btn-juego">Juego X</button>
     </div>
 </div>

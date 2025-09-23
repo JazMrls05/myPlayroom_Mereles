@@ -35,6 +35,18 @@
     animation: floatUpDown 1.5s ease-in-out infinite;
     border: 2px solid aqua; 
     box-shadow: 0 0 10px aqua; 
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-size:0;
+}
+
+#ahorcado:hover{
+    background-image:url(../../../../src/assets/portadas/ahorcado.png);
+}
+
+#cartas:hover{
+    background-image:url(../../../../src/assets/portadas/cartas.png);
 }
 
 @keyframes floatUpDown {

@@ -1,0 +1,28 @@
+<div class="div-fondo">
+    <mat-card id="div-puntaje">
+        <p>&nbsp;Puntaje: {{ puntaje }}</p>
+    </mat-card>    
+
+    <div id="div-carta-boton">
+        <mat-card id="carta">
+            <h2 id="titulo-carta" >Carta</h2>
+            <div class="numero-carta" [ngClass]="getColorCarta(cartaActual)">{{ cartaActual.valor }} {{ cartaActual.palo}}</div>
+        </mat-card>
+        <mat-card id="carta-reverso">
+            <h2 id="titulo-carta" ></h2>
+        </mat-card>
+        <div class="botones-verticales">
+            <button mat-raised-button class="btn-juego" (click)="iniciarJuego()">↺ Reiniciar</button>
+            <button mat-raised-button class="btn-juego" routerLink="/home">Volver al Home</button>
+        </div>
+    </div>
+
+    <h2>¿La siguiente carta será mayor o menor?</h2>
+    <div class="opciones">
+        <button mat-raised-button  class="btn-juego" (click)="adivinar('menor')" [disabled]="juegoTerminado">Menor 👇</button>
+        <button mat-raised-button  class="btn-juego" (click)="adivinar('mayor')" [disabled]="juegoTerminado">Mayor 👆</button>
+    </div>
+    <div class="mensaje">
+        <p>{{ mensaje }}</p>
+    </div>
+</div>

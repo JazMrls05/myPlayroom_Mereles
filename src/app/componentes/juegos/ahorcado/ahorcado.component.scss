@@ -1,0 +1,130 @@
+.contenedor-ahorcado {
+    width: 90vw;
+    max-width: 1000px;
+    height: 98%;
+    padding: 3vh 4vw;
+    background-color: rgba(255, 243, 205, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Consolas';
+}
+
+#div-centro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #e73200, #ed5111, #f26922, #f77e34, #fc9246);;
+}
+
+h2 {
+    font-size: 2vw;
+    margin-bottom: 60px;
+}
+
+.palabra span {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0.4vw;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    width: clamp(30px, 5vw, 50px);
+    text-transform: uppercase;
+}
+
+.palabra {
+    margin-bottom: 20px;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 40px;
+    margin: 3vh 0;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 5px;
+}
+
+button[mat-button] {
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 0.5em;
+    border: solid 2px;
+}
+
+.estado-juego {
+    font-size: 1vw;
+    margin-top: 20px;
+}
+
+.ganaste {
+    color: green;
+    font-weight: bold;
+}
+
+.perdiste {
+    color: red;
+    font-weight: bold;
+}
+
+#btn-reiniciar{
+    font-size: 2vw;
+    height: 60px;
+}
+
+#btn-volver{
+    margin-top: 5px;
+    width: 50vw;
+    height: 8vh;
+    font-size: 3vh;
+}
+
+.layout-ahorcado {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 2vh;
+}
+
+.imagen-ahorcado {
+    width: clamp(150px, 25vw, 300px);
+    background-color: white;
+    padding: 1em;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.imagen-ahorcado img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.puntaje-card {
+    background-color: rgba(255, 248, 225, 0.5);
+    border: 2px solid #ffa000;
+    color: #5d4037;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Consolas';
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 30%;
+}
+
+.puntaje-card h3 {
+    margin: 0;
+    font-size: 1.8vw;
+}
+
+.puntaje-card p {
+    margin: 5px 0 0 0;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color:aqua;
+}

@@ -1,0 +1,31 @@
+
+<div id="div-fondo">
+    <mat-card id="chat-card">
+        <div id="div-titulo">
+        <mat-card-title>💬 Chat grupal</mat-card-title>
+        </div>
+
+        <mat-card-content id="chat-mensajes">
+        <div *ngFor="let m of mensajes" [ngClass]="{ 'mio': esMio(m), 'otro': !esMio(m) }" class="mensaje">
+            <div class="burbuja">
+            <strong *ngIf="!esMio(m)">{{ m.usuario }}:</strong>
+            {{ m.texto }}
+            <br />
+            <small>{{ m.created_at | date: 'shortTime' }}</small>
+            </div>
+        </div>
+        </mat-card-content>
+
+        <div id="chat-input">
+        <mat-form-field style="flex-grow: 1; margin-right: 10px">
+            <input id="input-mensajes"
+                    (keydown.enter)="enviarMensaje()"
+                    matInput
+                    [(ngModel)]="nuevoMensaje"
+                    placeholder="Escribí algo...">
+        </mat-form-field>
+        <button class="btn-enviar" (click)="enviarMensaje()">Enviar</button>
+        </div>
+    </mat-card>
+    <button mat-flat-button style="margin-top: 15px; font-size: large;" (click)="volverAlHome()">Volver al Home 🏠</button>
+</div>

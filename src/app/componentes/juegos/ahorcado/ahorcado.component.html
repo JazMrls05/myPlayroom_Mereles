@@ -1,0 +1,40 @@
+<div id="div-centro">
+    <mat-card class="puntaje-card">
+        <h3>Puntaje</h3>
+        <p>{{ puntaje }} puntos</p>
+    </mat-card>
+    <div class="layout-ahorcado">
+    <mat-card class="imagen-ahorcado">
+        <img [src]="'assets/ahorcado/ahorcado' + letrasErradas.length + '.png'" alt="Ahorcado" />
+    </mat-card>
+
+    <mat-card class="contenedor-ahorcado">
+        <h2>🤔 A · H · O · R · C · A · D · O 🤔</h2>
+
+        <div class="palabra">
+        <span *ngFor="let letra of palabraOculta.split('')">
+            {{ letraMostrada(letra) }}
+        </span>
+        </div>
+
+        <div class="teclado">
+        <button
+            mat-button
+            *ngFor="let letra of letrasDisponibles"
+            [disabled]="letrasAdivinadas.includes(letra) || letrasErradas.includes(letra) || juegoPerdido() || juegoGanado()"
+            (click)="seleccionarLetra(letra)">
+            {{ letra }}
+        </button>
+        </div>
+
+        <div class="estado-juego">
+        <p *ngIf="juegoGanado()" class="ganaste">¡Ganaste! 🎉</p>
+        <p *ngIf="juegoPerdido()" class="perdiste">Perdiste 😭 La palabra era: {{ palabraOculta }}</p>
+        </div>
+
+        <button mat-stroked-button id="btn-reiniciar" color="accent" (click)="reiniciarJuego()">Reiniciar</button>
+    </mat-card>
+    </div>
+
+    <button mat-flat-button id="btn-volver" (click)="salirDelJuego()">Volver al Home 🏠</button>
+</div>
