@@ -61,20 +61,20 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
+.carta-img{
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 h2{
     font-size: x-large;
-}
-.numero-carta {
-    font-size: 5vw;
-    font-weight: bold;
-    
-    &.rojo {
-    color: red;
-    }
-
-    &.negro {
-    color: black;
-    }
 }
 
 .btn-juego{

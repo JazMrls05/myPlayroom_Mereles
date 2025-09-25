@@ -29,7 +29,7 @@
 
         <div class="estado-juego">
         <p *ngIf="juegoGanado()" class="ganaste">¡Ganaste! 🎉</p>
-        <p *ngIf="juegoPerdido()" class="perdiste">Perdiste 😭 La palabra era: {{ palabraOculta }}</p>
+        <p *ngIf="juegoPerdido()" class="perdiste">Perdiste 😭 La palabra era: {{ palabraOculta }}. Tu puntaje final es {{ mejorPuntaje }}</p>
         </div>
 
         <button mat-stroked-button id="btn-reiniciar" color="accent" (click)="reiniciarJuego()">Reiniciar</button>

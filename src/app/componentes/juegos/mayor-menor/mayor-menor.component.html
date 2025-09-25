@@ -5,8 +5,9 @@
 
     <div id="div-carta-boton">
         <mat-card id="carta">
-            <h2 id="titulo-carta" >Carta</h2>
-            <div class="numero-carta" [ngClass]="getColorCarta(cartaActual)">{{ cartaActual.valor }} {{ cartaActual.palo}}</div>
+            <div>
+                <img *ngIf="cartaActual" [src]="cartaActual.image" class="carta-img">
+            </div>
         </mat-card>
         <mat-card id="carta-reverso">
             <h2 id="titulo-carta" ></h2>

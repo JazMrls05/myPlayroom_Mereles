@@ -40,7 +40,12 @@ export class ChatComponent implements OnInit, OnDestroy {
       .order('created_at', { ascending: true });
 
     if (!error && data) {
+      const cantidadMensajes = this.mensajes.length;
       this.mensajes = data;
+
+      if(this.mensajes.length !== cantidadMensajes){
+        this.scrollAlFinal();
+      }
     }
   }
 
