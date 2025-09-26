@@ -10,6 +10,14 @@ const routes: Routes = [
     path: 'mayor-menor',
     loadComponent: () => import('../../componentes/juegos/mayor-menor/mayor-menor.component').then(c => c.MayorMenorComponent)
   },
+  {
+      path: 'preguntados',
+    loadComponent: () => import('../../componentes/juegos/preguntados/preguntados.component').then(c => c.PreguntadosComponent)
+  },
+  {
+      path: 'simon-dice',
+    loadComponent: () => import('../../componentes/juegos/simon-dice/simon-dice.component').then(c => c.SimonDiceComponent)
+  }
 ];
 
 @NgModule({

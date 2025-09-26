@@ -3,7 +3,7 @@
     max-width: 1000px;
     height: 98%;
     padding: 3vh 4vw;
-    background-color: rgba(255, 243, 205, 0.5);
+    background-color: rgba(255, 243, 205, 0.592);
     border-radius: 20px;
     text-align: center;
     font-family: 'Consolas';
@@ -15,7 +15,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-image: linear-gradient(to bottom, #e73200, #ed5111, #f26922, #f77e34, #fc9246);;
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
 }
 
 h2 {

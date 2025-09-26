@@ -40,6 +40,12 @@ export class HomeComponent {
         case 'Mayor o menor':
           this.router.navigate(['/juegos/mayor-menor']);
           break;
+        case 'Preguntados':
+          this.router.navigate(['/juegos/preguntados']);
+          break;
+        case 'Simón dice':
+          this.router.navigate(['/juegos/simon-dice']);
+          break;
         default:
           this.snackBar.open('Juego no encontrado', 'Cerrar', {
             duration: 2000

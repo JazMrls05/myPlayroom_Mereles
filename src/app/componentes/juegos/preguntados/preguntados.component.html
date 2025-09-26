@@ -1,0 +1,27 @@
+<div id="div-fondo">
+<h1>¿ Qué pelicula es ? 😄</h1>
+    <mat-card id="card-puntaje">
+        <mat-card-content>
+            Pelicula nº: {{contadorPelis}}<br>
+            Aciertos: {{puntaje}} de 22
+        </mat-card-content>
+    </mat-card>
+    <mat-card id="card-vista">
+        <mat-card-content>
+            <img *ngIf="peliculaActual" [src]="peliculaActual.movie_banner" width="700" >
+
+        </mat-card-content>
+    </mat-card>
+    <div id="div-botones">
+    <button 
+        *ngFor="let opcion of opciones" 
+        mat-flat-button 
+        class="btn-opciones"
+        [ngClass]="{'correcta': opcionSeleccionada === opcion && esCorrecta, 'incorrecta': opcionSeleccionada === opcion && !esCorrecta}"
+        (click)="verificarRespuesta(opcion)">
+        {{ getTituloTraducido(opcion) }}
+        </button>
+    </div>
+
+    <button mat-raised-button id="btn-volver" routerLink="/home">Volver al Home 🏠</button>
+</div>

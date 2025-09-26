@@ -1,0 +1,65 @@
+.info {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    background-color: #5200cc;
+    width: 10%;
+    border-radius: 20px;
+    color: aqua;
+    font-family: 'Consolas';
+    font-size: x-large;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton {
+    border-radius: 150px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid transparent;
+}
+
+.rojo { background-color: #fb1100; }
+.verde { background-color: #017c05; }
+.azul { background-color: #0348d2; }
+.amarillo { background-color: #d5c000; }
+
+.resaltado {
+    box-shadow: 0 0 20px 5px white;
+    transform: scale(1.1);
+}
+
+.btn-juego {
+    width:230px;
+    height: 60px;
+    border-radius: 20px;
+    border:2px solid rgba(240, 255, 255, 0.166);
+    background-color: #1500ff;
+    font-size: x-large;
+    color:aqua;
+    font-family: 'consolas';
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-juego:hover{
+    border: 2px solid aqua; 
+    box-shadow: 0 0 10px aqua; 
+}
+
+#div-centro{
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

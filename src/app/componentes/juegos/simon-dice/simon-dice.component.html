@@ -1,0 +1,21 @@
+<div id="div-centro">
+    <div class="info">
+        <p>Puntaje: {{puntaje}}</p>
+        <p>Vidas: {{vidas}}</p>
+    </div>
+
+    <div class="grid">
+        <div 
+        *ngFor="let color of botones; let i = index"
+        class="boton"
+        [ngClass]="color"
+        [class.resaltado]="resaltado === i"
+        (click)="clickBoton(i)">
+        </div>
+    </div>
+
+    <button (click)="empezarJuego()" class="btn-juego">Empezar Juego</button>
+    <button routerLink="/home" class="btn-juego">Volver</button>
+</div>
+
+

@@ -49,6 +49,14 @@
     background-image:url(../../../../src/assets/portadas/cartas.png);
 }
 
+#pelis:hover{
+    background-image:url(../../../../src/assets/portadas/pelis.png);
+}
+
+#colores:hover{
+    background-image:url(../../../../src/assets/portadas/colores.png);
+}
+
 @keyframes floatUpDown {
     0% {
     transform: translateY(0);

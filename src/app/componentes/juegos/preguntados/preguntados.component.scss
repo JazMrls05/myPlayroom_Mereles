@@ -1,0 +1,72 @@
+#div-fondo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+}
+
+#card-vista{
+    width: 40vw;
+    height: 53vh;
+    background-color: rgb(25, 4, 58);
+    margin-top: 15px;
+    mat-card-content{
+        display:flex;
+        justify-content: center;
+    }
+}
+
+#card-puntaje{
+    width: 15%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mat-card-content{
+        font-size: large;
+    }
+    background-color: rgb(25, 4, 58);
+    color:aqua;
+    font-family: 'Consolas';
+}
+
+.btn-opciones{
+    margin-top: 20px;
+    height:80px;
+    width:250px;
+    border-radius: 50px;
+    border:none;
+    font-size: 22px;
+    font-family: 'Consolas';
+}
+
+#div-botones{
+    display:flex;
+    flex-wrap: wrap;
+    gap:25px;
+}
+
+#btn-volver{
+    margin-top: 20px;
+    width: 55%;
+    height:60px;
+    font-size: large;
+}
+
+h1{
+    font-family: 'Consolas';
+    font-size: 50px;
+    color:aqua ;
+}
+
+.correcta {
+    background-color: #4caf50 !important;
+    color: white;
+}
+.incorrecta {
+    background-color: #f44336 !important;
+    color: white;
+}
