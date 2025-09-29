@@ -69,10 +69,8 @@ export class SimonDiceComponent {
       return;
     }
 
-    // Acierto
-    this.puntaje++;
-
     if (this.jugadorSecuencia.length === this.secuencia.length) {
+      this.puntaje++;
       this.jugadorSecuencia = [];
       await this.delay(500);
       this.agregarColor();
