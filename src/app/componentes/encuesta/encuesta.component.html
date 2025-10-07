@@ -1,0 +1,73 @@
+<div id="div-fondo">
+    <mat-card id="card-encuesta"> 
+        <div id="div-titulo">
+            <mat-card-title style="color:aqua; font-family: Consolas;">
+            ⬇ Experiencia en la Sala De Juegos ⬇
+            </mat-card-title>
+        </div>
+        <mat-card-content>
+            <form [formGroup]="encuestaForm" (ngSubmit)="enviarEncuesta()">
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Apellido</mat-label>
+                    <input matInput formControlName="apellido" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Edad</mat-label>
+                    <input matInput type="number" formControlName="edad" required>
+                    <mat-error *ngIf="encuestaForm.get('edad')?.hasError('min')">
+                        La edad mínima para enviar esta encuesta es de 18 años.
+                    </mat-error>
+                    <mat-error *ngIf="encuestaForm.get('edad')?.hasError('max')">
+                        La edad máxima para enviar esta encuesta es de 99 años.
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput type="text" formControlName="telefono" required minlength="8" maxlength="10" pattern="^[0-9]+$">
+                    <mat-error *ngIf="encuestaForm.get('telefono')?.hasError('minlength')">
+                        Mínimo 8 numeros
+                    </mat-error>
+                    <mat-error *ngIf="encuestaForm.get('telefono')?.hasError('pattern')">
+                        Solo números, sin espacios ni símbolos
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <div>
+                <label>Tu experencia en Sala de Juegos fué: </label>
+                    <mat-radio-group formControlName="experiencia">
+                        <mat-radio-button value="no_satisfactoria">No muy satisfactoria😕</mat-radio-button>
+                        <mat-radio-button value="medio_satisfactoria">Medianamente satisfactoria😐</mat-radio-button>
+                        <mat-radio-button value="muy_satisfactoria">Muy satisfactoria😀</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <br>
+                <div formGroupName="aspectos" style="margin-top: 10px;">
+                    <label>¿Qué te gustó de Sala de Juegos? Opciones múltiples</label><br />
+                    <mat-checkbox formControlName="estetica">Su estética</mat-checkbox>
+                    <mat-checkbox formControlName="juegos">Sus juegos</mat-checkbox>
+                    <mat-checkbox formControlName="interfaz">Tiene una interfaz intuitiva</mat-checkbox>
+                    <mat-checkbox formControlName="nada">Nada de lo anterior</mat-checkbox>
+                    <mat-error *ngIf="encuestaForm.get('aspectos')?.hasError('requerido') && encuestaForm.get('aspectos')?.touched">
+                        Tenés que seleccionar una opción por lo menos ☝
+                    </mat-error>
+                </div>
+                <br>
+                <mat-form-field style="width: 100%">
+                <mat-label>¿Qué juego/s añadirías a Sala de Juegos?</mat-label>
+                    <textarea matInput formControlName="sugerencia"></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button type="submit">Enviar ✉</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <button mat-flat-button routerLink="/home" style="margin-top:10px; width: 700px; font-size: x-large; height: 50px;">Volver al home 🏠</button>
+</div>

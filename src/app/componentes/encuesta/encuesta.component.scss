@@ -1,0 +1,45 @@
+#div-fondo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+    flex-direction: column;
+}
+
+#div-titulo {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+#card-encuesta{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 750px;
+    border-radius: 30px;
+    background-color: #0d06552e;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Consolas';
+    color:aqua;
+    font-size: larger;
+}
+
+mat-form-field{
+    width:90%;
+}
+
+::ng-deep .mat-mdc-radio-button .mdc-label,
+::ng-deep .mat-mdc-checkbox .mdc-form-field > label {
+    color: white !important; /* cambiá el color si querés otro */
+    font-family: Consolas, monospace;
+    font-size: larger;
+}
+
+mat-error {
+    color: #f1a1bc !important; /* rosa */
+    font-size: small;
+}

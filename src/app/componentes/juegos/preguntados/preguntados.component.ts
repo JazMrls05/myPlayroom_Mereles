@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
+import { SupabaseService } from '../../../servicios/supabase.service';
 
 @Component({
   selector: 'app-preguntados',
@@ -41,14 +42,14 @@ export class PreguntadosComponent implements OnInit{
     "Howl's Moving Castle": "El increíble castillo vagabundo",
     "Tales from Earthsea": "Cuentos de terramar",
     "From Up on Poppy Hill": "La colina de las amapolas",
-    "The Wind Rises": "se levanta viento",
-    "The Tale of the Princess Kaguya": "El cuento de la princesas Kaguya",
+    "The Wind Rises": "Se levanta el viento",
+    "The Tale of the Princess Kaguya": "El cuento de la princesa Kaguya",
     "When Marnie Was There": "El recuerdo de Marnie",
-    "The Red Turtle": "la tortuga roja",
+    "The Red Turtle": "La tortuga roja",
     "Earwig and the Witch": "Earwig y la bruja",
 };
 
-  constructor(private peliculaSvc: PeliculasService, private snackBar: MatSnackBar){}
+  constructor(private peliculaSvc: PeliculasService, private snackBar: MatSnackBar, private supabase: SupabaseService){}
 
   ngOnInit(): void {
     this.cargarPeliculas();
@@ -71,6 +72,7 @@ export class PreguntadosComponent implements OnInit{
     this.esCorrecta = false;
 
     if (this.peliculasDisponibles.length === 0) {
+      await this.supabase.guardarPuntaje('Preguntados', this.puntaje);
       Swal.fire({
               icon:'success',
               title:'¡Juego terminado!',
@@ -104,6 +106,6 @@ export class PreguntadosComponent implements OnInit{
     if((this.esCorrecta || !this.esCorrecta) && !(this.peliculasDisponibles.length === 0)){
       this.contadorPelis++;
     }
-    setTimeout(() => this.pasarImagen(),1200);
+    setTimeout(() => this.pasarImagen(),2000);
   }
 }

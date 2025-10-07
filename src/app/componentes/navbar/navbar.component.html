@@ -4,8 +4,11 @@
             <button class="btn-navbar" routerLink="/quiensoy">¿Quién soy? ♡</button>
             <ng-container *ngIf="user$ | async as user">
                 <button class="btn-navbar" routerLink="/chat">Sala de Chat</button>
+                <button class="btn-navbar" routerLink="/encuesta">Encuesta</button>
+                <button class="btn-navbar" routerLink="/resultados">Resultados</button>
             </ng-container>
         </div>
+        <h1>🎮Sala de Juegos🎮</h1>
         <div id="lado-der">
             <ng-container *ngIf="user$ | async as user; else noUser">
                 <span class="nombre-usuario">

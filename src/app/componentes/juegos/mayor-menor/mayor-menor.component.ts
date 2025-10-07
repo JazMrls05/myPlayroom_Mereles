@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { CartasService } from '../../../servicios/cartas.service';
+import { SupabaseService } from '../../../servicios/supabase.service';
 
 @Component({
   selector: 'app-mayor-menor',
@@ -19,7 +20,7 @@ export class MayorMenorComponent implements OnInit{
   mensaje = '';
   juegoTerminado = false;
 
-  constructor(private cartasSvc: CartasService){}
+  constructor(private cartasSvc: CartasService, private supabase: SupabaseService){}
 
   ngOnInit(): void {
     this.iniciarJuego();
@@ -44,7 +45,7 @@ export class MayorMenorComponent implements OnInit{
   adivinar(opcion: 'mayor' | 'menor'){
     if (this.juegoTerminado) return;
 
-    this.cartasSvc.sacarCarta().subscribe(data => {
+    this.cartasSvc.sacarCarta().subscribe(async data => {
       const cartaNueva = data.cards[0];
 
       const valorActual = this.convertirValor(this.cartaActual.value);
@@ -59,6 +60,8 @@ export class MayorMenorComponent implements OnInit{
       } else {
         this.mensaje = `❌ Fallaste. Fin del juego. Tu puntaje final es ${this.puntaje}`;
         this.juegoTerminado = true;
+
+        await this.supabase.guardarPuntaje('Mayor o Menor', this.puntaje);
       }
 
       this.cartaActual = cartaNueva;
@@ -66,6 +69,8 @@ export class MayorMenorComponent implements OnInit{
       if (data.remaining === 0 && !this.juegoTerminado) {
         this.mensaje = `🏆 Ganaste! No quedan más cartas. Tu puntaje final es ${this.puntaje}`;
         this.juegoTerminado = true;
+
+        await this.supabase.guardarPuntaje('Mayor o Menor', this.puntaje); 
       }
     });
   }

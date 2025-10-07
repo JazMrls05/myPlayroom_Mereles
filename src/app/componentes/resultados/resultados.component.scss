@@ -1,0 +1,55 @@
+#div-fondo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #d100b6, #bf00bb, #ab00c0, #9300c4,
+    #7700c9, #6600cb, #5200cc, #3700ce, #3000cd, #2800cc, #1f00ca, #1100c9);
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1.2rem;
+    border: none;
+    
+}
+th {
+    background: #3f51b5b7 !important;
+    color: aqua;
+    font-size: 2rem;
+    text-align:left;
+}
+td, th {
+    padding: 16px;
+    border: 1px solid rgb(35, 58, 149);
+    font-family: 'Consolas' ;
+    font-size: large;
+}
+
+td{
+    text-align: center;
+}
+
+#espacio-tabla{
+    width:70%;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-family: 'Consolas';
+    color:aqua;
+    font-size: xx-large;
+}
+
+#div-botones{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    button{
+        margin-left: 15px;
+        height: 50px;
+        font-size: larger;
+    }
+}

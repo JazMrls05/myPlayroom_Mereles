@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
+import { SupabaseService } from '../../../servicios/supabase.service';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-simon-dice',
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,MatSnackBarModule],
   templateUrl: './simon-dice.component.html',
   styleUrl: './simon-dice.component.scss'
 })
@@ -18,6 +20,8 @@ export class SimonDiceComponent {
 
   vidas = 2;
   puntaje = 0;
+
+  constructor(private supabase: SupabaseService, private snackbar: MatSnackBar){}
 
   empezarJuego() {
     this.secuencia = [];
@@ -54,7 +58,13 @@ export class SimonDiceComponent {
     const ultima = this.jugadorSecuencia.length - 1;
     if (this.jugadorSecuencia[ultima] !== this.secuencia[ultima]) {
       this.vidas--;
+      this.snackbar.open('Perdiste una vida! te quedan '+ this.vidas +' vidas', 'Cerrar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      });
       if (this.vidas === 0) {
+        await this.supabase.guardarPuntaje('Simon dice', this.puntaje);
         Swal.fire({
           icon: 'error',
           title: '¡Perdiste!',
