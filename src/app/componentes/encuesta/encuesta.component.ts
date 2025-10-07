@@ -63,40 +63,50 @@ export class EncuestaComponent {
     });
   }
 
-  async enviarEncuesta(){
-    if (this.encuestaForm.valid){
-      const datos = this.encuestaForm.value;
+  async enviarEncuesta() {
+  // trim de todos los campos de texto
+  const formValue = { ...this.encuestaForm.value };
+  ['nombre','apellido','telefono','experiencia','sugerencia'].forEach(key => {
+    if(formValue[key]) formValue[key] = formValue[key].trim();
+  });
 
-      try{
-        await this.supabase.guardarEncuesta(datos);
-        Swal.fire({
-              icon:'success',
-              title:'¡Encuesta realizada!',
-              text:'Gracias por compartirnos tu opinión :)',
-              confirmButtonText:'Aceptar',
-              heightAuto: false
-              });
-        this.encuestaForm.reset();
-      } catch (error){
-        console.error('Error al enviar la encuesta', error);
-        Swal.fire({
-              icon:'error',
-              title:'Error',
-              text:'Algo salió mal al cargar la encuesta',
-              confirmButtonText:'Aceptar',
-              heightAuto: false
-              });
-      }
+  this.encuestaForm.setValue({
+    ...formValue,
+    aspectos: formValue.aspectos
+  });
+
+  if (this.encuestaForm.valid) {
+    // enviá normalmente
+    try {
+      await this.supabase.guardarEncuesta(formValue);
+      Swal.fire({
+        icon:'success',
+        title:'¡Encuesta realizada!',
+        text:'Gracias por compartirnos tu opinión :)',
+        confirmButtonText:'Aceptar',
+        heightAuto: false
+      });
+      this.encuestaForm.reset();
+    } catch (error) {
+      console.error('Error al enviar la encuesta', error);
+      Swal.fire({
+        icon:'error',
+        title:'Error',
+        text:'Algo salió mal al cargar la encuesta',
+        confirmButtonText:'Aceptar',
+        heightAuto: false
+      });
     }
-    else{
-      this.encuestaForm.markAllAsTouched();
-      this.snackBar.open('Completá todos los campos!!', 'Cerrar', {
+  } else {
+    this.encuestaForm.markAllAsTouched();
+    this.snackBar.open('Completá todos los campos!!', 'Cerrar', {
       duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
-      });
-    }
+    });
   }
+}
+
 
   validarAlMenosUnCheckbox(control: FormGroup) {
   const valores = Object.values(control.value);
